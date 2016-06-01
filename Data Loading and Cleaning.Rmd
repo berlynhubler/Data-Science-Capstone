@@ -1,0 +1,59 @@
+---
+title: "Capstone_Data Loading and Cleaning"
+output: html_document
+date: 05/31/2016
+author: Berlyn Hubler
+---
+
+
+```{r setup}
+# required packages 
+required <- c("tm", "SnowballCC", "RColorBrewer", "ggplot2", "wordcloud", "biclust", "cluster", "igraph", "fpc")
+
+# install required packages
+install.packages(required, dependencies=TRUE)  
+
+# remove required files list
+rm(required)
+```
+
+## Loading the Text Files
+
+```{r file loading}
+# load folder with English text files
+
+filepath_en_US <- file.path("/Users/berlyn/Documents/Data Science Capstone/final/en_US")
+
+dir(filepath_en_US)
+
+# add loop to read each folder and show each text file
+
+```
+
+## Loading the text
+
+```{r data loading}
+# load text mining R package
+library(tm)
+docs <- Corpus(DirSource(filepath_en_US))
+
+summary(docs)
+```
+
+## Pre-Processing
+
+```{r preprocessing}
+# remove punctuation
+
+docs <- tm_map(docs, removePunctuation)
+
+inspect(docs[2])
+```
+
+## Plots
+
+
+```{r plots, echo=FALSE}
+# 
+```
+
